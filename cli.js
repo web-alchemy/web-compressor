@@ -4,6 +4,9 @@ const { compress, formats: FORMATS } = require('./');
 
 const [ , , from, to, ...restArgs] = process.argv;
 
+const rootDir = process.cwd();
+const fromFolder = path.isAbsolute(from) ? from : path.join(rootDir, from);
+const toFolder = path.isAbsolute(to) ? to : path.join(rootDir, to);
 const formats = [];
 
 if (restArgs.includes('--gzip')) {
@@ -17,11 +20,6 @@ if (restArgs.includes('--brotli')) {
 if (formats.length === 0) {
   formats.push(FORMATS.GZIP);
 }
-
-const rootDir = process.cwd();
-
-const fromFolder = path.isAbsolute(from) ? from : path.join(rootDir, from);
-const toFolder = path.isAbsolute(to) ? to : path.join(rootDir, to);
 
 compress({
   from: fromFolder,
