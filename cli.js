@@ -1,22 +1,21 @@
 const path = require('path');
 
-const CONSTANTS = require('./lib/constants');
-const { compress } = require('./lib/functions');
+const { compress, formats: FORMATS } = require('./');
 
 const [ , , from, to, ...restArgs] = process.argv;
 
 const formats = [];
 
 if (restArgs.includes('--gzip')) {
-  formats.push(CONSTANTS.FORMATS.GZIP);
+  formats.push(FORMATS.GZIP);
 }
 
 if (restArgs.includes('--brotli')) {
-  formats.push(CONSTANTS.FORMATS.BROTLI);
+  formats.push(FORMATS.BROTLI);
 }
 
 if (formats.length === 0) {
-  formats.push(CONSTANTS.FORMATS.GZIP);
+  formats.push(FORMATS.GZIP);
 }
 
 const rootDir = process.cwd();
