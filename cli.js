@@ -21,8 +21,8 @@ if (formats.length === 0) {
 
 const rootDir = process.cwd();
 
-const fromFolder = path.join(rootDir, from);
-const toFolder = path.join(rootDir, to);
+const fromFolder = path.isAbsolute(from) ? from : path.join(rootDir, from);
+const toFolder = path.isAbsolute(to) ? to : path.join(rootDir, to);
 
 compress({
   from: fromFolder,
