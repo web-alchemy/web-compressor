@@ -2,9 +2,9 @@ const path = require('path');
 
 const { compress, formats: FORMATS } = require('./');
 
-const [ , , from, to, ...restArgs] = process.argv;
-
 const rootDir = process.cwd();
+const [ , , from = rootDir, to = rootDir, ...restArgs] = process.argv;
+
 const fromFolder = path.isAbsolute(from) ? from : path.join(rootDir, from);
 const toFolder = path.isAbsolute(to) ? to : path.join(rootDir, to);
 const formats = [];
