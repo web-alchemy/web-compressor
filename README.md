@@ -17,5 +17,9 @@ compress({
   from: '<input-folder>',
   to: '<output-folder>',
   formats: [formats.GZIP, formats.BROTLI]
+}).then(() => {
+  // operation end
+}).catch(() => {
+  // operation error
 });
 ```
