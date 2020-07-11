@@ -28,5 +28,12 @@
     "postversion": "npm publish",
     "preversion": "npm test",
     "test": "echo \"No test specified\" && exit 0"
-  }
+  },
+  "keywords": [
+    "compression",
+    "optimization",
+    "gzip",
+    "brotli",
+    "archive"
+  ]
 }
