@@ -1,4 +1,5 @@
 const path = require('path');
+const { performance } = require('perf_hooks');
 
 const { compress, formats: FORMATS } = require('./');
 
@@ -21,8 +22,15 @@ if (formats.length === 0) {
   formats.push(FORMATS.GZIP);
 }
 
+const startTime = performance.now();
+
 compress({
   from: fromFolder,
   to: toFolder,
   formats
-}).catch(console.error)
+})
+  .then(() => {
+    const diffTime = performance.now() - startTime;
+    console.log(`The Compression Process took ${diffTime}ms`)
+  })
+  .catch(console.error)
