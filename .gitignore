@@ -1,6 +1,3 @@
 node_modules
 .DS_Store
 .vscode
-archive
-test.js
-demo
