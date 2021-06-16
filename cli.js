@@ -46,6 +46,7 @@ if (params['concurrency']) {
 }
 
 const startTime = performance.now();
+console.log('The Compression Process has started...');
 
 compress({
   from: fromFolder,
