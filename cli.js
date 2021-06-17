@@ -53,7 +53,7 @@ compress({
   to: toFolder,
   formats,
   extWhiteList: params['ext-white-list'],
-  concurrency: params.concurrency,
+  concurrency: params['concurrency'],
   fileSize: params['file-size']
 })
   .then(() => {
