@@ -1,6 +1,6 @@
 # Web Compressor
 
-Utility for creating _gzip_ and _brotli_ archives for the web
+Utility for creating _gzip_ and _brotli_ pre-compressed files for the static web serving.
 
 ## Using as a CLI
 
@@ -45,3 +45,10 @@ compress({
 | --ext-white-list | extWhiteList | A list of extensions that will be used to filter the necessary files | `['.html', '.css', '.js', '.json', '.svg', '.txt', '.xml']` |
 | --concurrency | concurrency | count of parallel handlers | `os.cpus().length` |
 | --file-size | fileSize | File Size Treshold | `0` |
+
+
+## Enabling precompressed files serving in web servers
+
+- Nginx. [gzip](https://nginx.org/en/docs/http/ngx_http_gzip_static_module.html), [brotli](https://github.com/google/ngx_brotli)
+- [Caddy](https://caddyserver.com/docs/caddyfile/directives/file_server)
+- [H2O](https://h2o.examp1e.net/configure/file_directives.html#file.send-compressed)
