@@ -1,6 +1,6 @@
 # Web Compressor
 
-Utility for creating _gzip_ and _brotli_ pre-compressed files for the static web serving.
+Utility for creating _gzip_ and _brotli_ pre-compressed files for a static web serving.
 
 ## Using as a CLI
 
