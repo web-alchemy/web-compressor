@@ -4,10 +4,16 @@ Utility for creating _gzip_ and _brotli_ pre-compressed files for a static web s
 
 ## Using as a CLI
 
+Base example:
+```
+npx @web-alchemy/web-compressor --from=<input-folder>
+```
+
+Example with all parameters:
 ```
 npx @web-alchemy/web-compressor \
-  --from=<input-folder> \
-  --to=<output-folder> \
+  --input=<input-folder> \
+  --output=<output-folder> \
   --formats=gzip,brotli \
   --ext-white-list=.html,.css,.js,.json,.svg,.txt,.xml \
   --concurrency=4 \
@@ -22,8 +28,8 @@ npx @web-alchemy/web-compressor \
 const { compress, formats } = require('@web-alchemy/web-compressor');
 
 compress({
-  from: '<input-folder>',
-  to: '<output-folder>',
+  input: '<input-folder>',
+  output: '<output-folder>',
   formats: [formats.GZIP, formats.BROTLI]
   extWhiteList: ['.html', '.css', '.js', '.json', '.svg', '.txt', '.xml'],
   concurrency: 4,
@@ -39,12 +45,12 @@ compress({
 
 | CLI Param | Module Param | Description | default value |
 | --- | --- | --- | --- |
-| --from    | from | Input folder | `process.cwd()` |
-| --to      | to   | Output folder | `from` param value|
-| --formats | formats | formats of output files | `['gzip', 'brotli']`|
-| --ext-white-list | extWhiteList | A list of extensions that will be used to filter the necessary files | `['.html', '.css', '.js', '.json', '.svg', '.txt', '.xml']` |
-| --concurrency | concurrency | count of parallel handlers | `os.cpus().length` |
-| --file-size | fileSize | File Size Treshold | `0` |
+| `--from` (alias `--input`) | `from` (alias `input`) | Input folder | `process.cwd()` |
+| `--to` (alias `--output`) | `to` (alias `output`)| Output folder | `from` param value|
+| `--formats` | `formats` | Formats of output files | `['gzip', 'brotli']`|
+| `--ext-white-list` | `extWhiteList` | A list of extensions that will be used to filter the necessary files | `['.html', '.css', '.js', '.json', '.svg', '.txt', '.xml']` |
+| `--concurrency` | `concurrency` | number of parallel handlers | `os.cpus().length` |
+| `--file-size` | `fileSize` | File size treshold in bytes. Files smaller than this size will be ignored | `0` |
 
 
 ## Enabling precompressed files serving in web servers
