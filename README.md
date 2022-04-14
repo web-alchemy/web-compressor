@@ -6,7 +6,7 @@ Utility for creating _gzip_ and _brotli_ pre-compressed files for a static web s
 
 Base example:
 ```
-npx @web-alchemy/web-compressor --from=<input-folder>
+npx @web-alchemy/web-compressor --input=<input-folder>
 ```
 
 Example with all parameters:
