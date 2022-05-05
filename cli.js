@@ -14,7 +14,7 @@ const params = Object.fromEntries(restArgs.map(param => {
   ]
 }));
 
-const from = params.input || params.from;
+const from = params.input || params.from || rootDir;
 const to = params.output || params.to || from;
 const fromFolder = path.isAbsolute(from) ? from : path.join(rootDir, from);
 const toFolder = path.isAbsolute(to) ? to : path.join(rootDir, to);
