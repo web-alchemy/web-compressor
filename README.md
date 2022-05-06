@@ -8,7 +8,6 @@ Base example (run inside folder with static assets):
 ```
 npx @web-alchemy/web-compressor
 ```
-```
 
 Example with all parameters:
 ```
