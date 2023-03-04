@@ -1,10 +1,6 @@
 {
   "name": "@web-alchemy/web-compressor",
   "version": "3.0.7",
-  "author": {
-    "name": "monochromer",
-    "email": "monochromer@mail.ru"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/web-alchemy/web-compressor.git"
