@@ -2,6 +2,7 @@ const path = require('path');
 const { performance } = require('perf_hooks');
 
 const { compress, formats: FORMATS } = require('./');
+const package = require('./package.json');
 
 const rootDir = process.cwd();
 const [ , , ...restArgs] = process.argv;
@@ -46,7 +47,9 @@ if (params['concurrency']) {
 }
 
 const startTime = performance.now();
-console.log('The Compression Process has started...');
+
+console.log(package.name);
+console.log(`version: ${package.version}`);
 
 compress({
   from: fromFolder,
