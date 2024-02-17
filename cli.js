@@ -60,7 +60,7 @@ compress({
   fileSize: params['file-size']
 })
   .then(() => {
-    const diffTime = performance.now() - startTime;
+    const diffTime = Math.round(performance.now() - startTime);
     console.log(`The Compression Process took ${diffTime}ms`)
   })
   .catch(console.error)
