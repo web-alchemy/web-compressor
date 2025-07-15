@@ -1,6 +1,6 @@
 # Web Compressor
 
-Utility for creating _gzip_ and _brotli_ pre-compressed files for a static web serving.
+Utility for creating _gzip_, _brotli_ and _zstd_ pre-compressed files for a static web serving.
 
 ## Using as a CLI
 
@@ -14,7 +14,7 @@ Example with all parameters:
 npx @web-alchemy/web-compressor \
   --input=<input-folder> \
   --output=<output-folder> \
-  --formats=gzip,brotli \
+  --formats=gzip,brotli,zstd \
   --ext-white-list=.html,.css,.js,.json,.svg,.txt,.xml \
   --concurrency=4 \
   --file-size=4096
@@ -30,7 +30,7 @@ const { compress, formats } = require('@web-alchemy/web-compressor');
 compress({
   input: '<input-folder>',
   output: '<output-folder>',
-  formats: [formats.GZIP, formats.BROTLI]
+  formats: [formats.GZIP, formats.BROTLI, formats.ZSTD]
   extWhiteList: ['.html', '.css', '.js', '.json', '.svg', '.txt', '.xml'],
   concurrency: 4,
   fileSize: 4096
@@ -46,7 +46,7 @@ compress({
 | CLI Param | Module Param | Description | default value |
 | --- | --- | --- | --- |
 | `--from` (alias `--input`) | `from` (alias `input`) | Input folder | `process.cwd()` |
-| `--to` (alias `--output`) | `to` (alias `output`)| Output folder | `from` param value|
+| `--to` (alias `--output`) | `to` (alias `output`) | Output folder | `from` param value |
 | `--formats` | `formats` | Formats of output files | `['gzip', 'brotli']`|
 | `--ext-white-list` | `extWhiteList` | A list of extensions that will be used to filter the necessary files | `['.html', '.css', '.js', '.json', '.svg', '.txt', '.xml']` |
 | `--concurrency` | `concurrency` | number of parallel handlers | `os.cpus().length` |
