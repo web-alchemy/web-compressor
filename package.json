@@ -30,6 +30,8 @@
     "optimization",
     "gzip",
     "brotli",
+    "zstd",
+    "zstandard",
     "archive",
     "CLI"
   ]
