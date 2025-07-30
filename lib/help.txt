@@ -1,0 +1,34 @@
+Utility for creating gzip, brotli and zstd pre-compressed files for a static web serving.
+
+Options:
+  `--from=<path>` (alias - `--input`):
+  Input folder.
+  Default: current working directory
+
+  `--to=<path>` (alias - `--output`):
+  Output folder.
+  Default: `--from` param value
+
+  `--formats`:
+  Comma separated list of formats of output files. Example: `--formats=gzip,brotli,zstd`.
+  Default: `gzip,brotli`
+
+  `--ext-white-list`:
+  Comma separated list of extensions that will be used to filter the necessary files.
+  Default: `.html,.css,.js,.json,.svg,.txt,.xml`
+
+  `--concurrency`:
+  Number of parallel handlers.
+  Default: value from `os.availableParallelism()` or `os.cpus().length`
+
+  `--file-size`:
+  File size treshold in bytes. Files smaller than this size will be ignored
+  Default: 0
+
+Example:
+  npx @web-alchemy/web-compressor \
+    --input=./assets \
+    --formats=gzip,brotli,zstd \
+    --ext-white-list=.html,.css,.js,.json,.svg,.txt,.xml \
+    --concurrency=4 \
+    --file-size=4096

@@ -2,6 +2,7 @@ const path = require('path');
 const { performance } = require('perf_hooks');
 
 const { compress, formats: FORMATS } = require('./');
+const { showHelp } = require('./lib/show-help');
 const package = require('./package.json');
 
 const rootDir = process.cwd();
@@ -14,6 +15,11 @@ const params = Object.fromEntries(restArgs.map(param => {
     (pair[1] === undefined || pair[1] === null) ? true : pair[1]
   ]
 }));
+
+if (params['help'] || Object.keys(params).length === 0) {
+  showHelp();
+  process.exit(0);
+}
 
 const from = params.input || params.from || rootDir;
 const to = params.output || params.to || from;
