@@ -34,5 +34,8 @@
     "zstandard",
     "archive",
     "CLI"
-  ]
+  ],
+  "dependencies": {
+    "@gfx/zopfli": "^1.0.15"
+  }
 }

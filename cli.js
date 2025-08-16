@@ -63,7 +63,8 @@ compress({
   formats,
   extWhiteList: params['ext-white-list'],
   concurrency: params['concurrency'],
-  fileSize: params['file-size']
+  fileSize: params['file-size'],
+  withZopfli: params['with-zopfli']
 })
   .then(() => {
     const diffTime = Math.round(performance.now() - startTime);
