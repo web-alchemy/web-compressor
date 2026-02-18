@@ -1,6 +1,6 @@
 {
   "name": "@web-alchemy/web-compressor",
-  "version": "3.1.2",
+  "version": "3.1.3",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/web-alchemy/web-compressor.git"
