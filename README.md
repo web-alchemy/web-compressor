@@ -48,6 +48,7 @@ compress({
 | `--from` (alias `--input`) | `from` (alias `input`) | Input folder | `process.cwd()` |
 | `--to` (alias `--output`) | `to` (alias `output`) | Output folder | `from` param value |
 | `--formats` | `formats` | Formats of output files | `['gzip', 'brotli']`|
+| `--with-zopfli` | `withZopfli` | Enable zopfli algorithm for gzip | `false` |
 | `--ext-white-list` | `extWhiteList` | A list of extensions that will be used to filter the necessary files | `['.html', '.css', '.js', '.json', '.svg', '.txt', '.xml']` |
 | `--concurrency` | `concurrency` | number of parallel handlers | `os.cpus().length` |
 | `--file-size` | `fileSize` | File size treshold in bytes. Files smaller than this size will be ignored | `0` |
