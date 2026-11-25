@@ -52,6 +52,10 @@ if (params['concurrency']) {
   }
 }
 
+if (params['remove-larger-files'] === true || params['remove-larger-files'] === 'true') {
+  params['remove-larger-files'] = true;
+}
+
 const startTime = performance.now();
 
 console.log(package.name);
@@ -63,7 +67,8 @@ compress({
   formats,
   extWhiteList: params['ext-white-list'],
   concurrency: params['concurrency'],
-  fileSize: params['file-size']
+  fileSize: params['file-size'],
+  removeLargerFiles: params['remove-larger-files']
 })
   .then(() => {
     const diffTime = Math.round(performance.now() - startTime);

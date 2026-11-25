@@ -17,7 +17,8 @@ npx @web-alchemy/web-compressor \
   --formats=gzip,brotli,zstd \
   --ext-white-list=.html,.css,.js,.json,.svg,.txt,.xml \
   --concurrency=4 \
-  --file-size=4096
+  --file-size=4096 \
+  --remove-larger-files
 ```
 
 ## Using as a module
@@ -33,7 +34,8 @@ compress({
   formats: [formats.GZIP, formats.BROTLI, formats.ZSTD]
   extWhiteList: ['.html', '.css', '.js', '.json', '.svg', '.txt', '.xml'],
   concurrency: 4,
-  fileSize: 4096
+  fileSize: 4096,
+  removeLargerFiles: true
 }).then(() => {
   // operation end
 }).catch(() => {
@@ -51,6 +53,7 @@ compress({
 | `--ext-white-list` | `extWhiteList` | A list of extensions that will be used to filter the necessary files | `['.html', '.css', '.js', '.json', '.svg', '.txt', '.xml']` |
 | `--concurrency` | `concurrency` | number of parallel handlers | `os.cpus().length` |
 | `--file-size` | `fileSize` | File size treshold in bytes. Files smaller than this size will be ignored | `0` |
+| `--remove-larger-files` | `removeLargerFiles` | Remove compressed files when they are larger than the source files | `false` |
 
 
 ## Enabling precompressed files serving in web servers

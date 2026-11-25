@@ -25,10 +25,15 @@ Options:
   File size treshold in bytes. Files smaller than this size will be ignored
   Default: 0
 
+  `--remove-larger-files`:
+  Remove compressed files when they are larger than the source files.
+  Default: false
+
 Example:
   npx @web-alchemy/web-compressor \
     --input=./assets \
     --formats=gzip,brotli,zstd \
     --ext-white-list=.html,.css,.js,.json,.svg,.txt,.xml \
     --concurrency=4 \
-    --file-size=4096
+    --file-size=4096 \
+    --remove-larger-files
